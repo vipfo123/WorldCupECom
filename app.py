@@ -5,8 +5,7 @@ from flask import Flask, render_template, redirect, request, session, jsonify
 from datetime import datetime
 import sqlalchemy.dialects.postgresql 
 
-DATABASE_URL = os.environ.get('DATABASE_URL', None)
-DATABASE_URL = 'postgresql' + DATABASE_URL[8:]
+DATABASE_URL = 'psql "host=worldcupecom-server.postgres.database.azure.com port=5432 dbname=postgres user=vrbnacscyh password=HX4758MO074GJFXD$ sslmode=require"'
 
 # # Instantiate Flask object named app
 app = Flask(__name__)
@@ -19,11 +18,8 @@ app.config["SESSION_PERMANENT"] = False
 Session(app)
 
 
-# cloud heroku
+# cloud azure
 db = SQL (DATABASE_URL)
-
-#local
-#db = SQL ('postgresql://postgres:123456@localhost/snapcartt') # database engine object from SQLAlchemy that manages connections to the database
 
 @app.route("/")
 def index():
