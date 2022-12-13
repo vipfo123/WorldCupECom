@@ -5,7 +5,7 @@ from flask import Flask, render_template, redirect, request, session, jsonify
 from datetime import datetime
 import sqlalchemy.dialects.postgresql 
 
-DATABASE_URL = 'postgresql://kwezirzpyk:VXXE8O5F6H1ME0SV$@wcstore-server/postgres'
+DATABASE_URL = 'postgresql://kwezirzpyk:VXXE8O5F6H1ME0SV$@wcstore-server.postgres.database.azure.com/postgres'
 
 # # Instantiate Flask object named app
 app = Flask(__name__)
