@@ -56,7 +56,7 @@ function validate ( )
     if ( !USERNAME.val() || USERNAME.val().length < 5  )
     {
         // Show an invalid input message
-        USERNAME_MSG.html( "Username must be 5 characters or more" );
+        USERNAME_MSG.html( "Tài khoản phải có ít nhất 5 ký tự" );
         USERNAME_MSG.show();
         // Indicate the type of bad input in the console.
         console.log( "Bad username" );
@@ -68,35 +68,35 @@ function validate ( )
 
     if ( USERNAME.val() != USERNAME.val().toLowerCase())
     {
-        USERNAME_MSG.html("Username must be all lowercase");
+        USERNAME_MSG.html("Tài khoản phải là ký tự thường");
         USERNAME_MSG.show();
         valid = false;
     }
 
     if ( !PASSWORD.val() || PASSWORD.val().length < 8 )
     {
-        PASSWORD_MSG.html("Password needs to be at least 8 characters long");
+        PASSWORD_MSG.html("Tài khoản cần ít nhất 8 ký tự");
         PASSWORD_MSG.show();
         valid = false;
     }
 
     if ( !CONFIRM.val() || PASSWORD.val() != CONFIRM.val() )
     {
-        CONFIRM_MSG.html("Passwords don't match");
+        CONFIRM_MSG.html("Nhập lại mật khẩu không đúng");
         CONFIRM_MSG.show();
         valid = false;
     }
 
     if ( !FNAME.val() )
     {
-        FNAME_MSG.html("First name must not be empty");
+        FNAME_MSG.html("Tên không được để trống");
         FNAME_MSG.show();
         valid = false;
     }
 
     if ( !LNAME.val() )
     {
-        LNAME_MSG.html("Last name must not be empty");
+        LNAME_MSG.html("Họ không được để trống");
         LNAME_MSG.show();
         valid = false;
     }
@@ -105,7 +105,7 @@ function validate ( )
     var atpos = x.indexOf("@");
     var dotpos = x.lastIndexOf(".");
     if ( atpos < 1 || dotpos < atpos + 2 || dotpos + 2 >= x.length ) {
-        EMAIL_MSG.html("You need to enter a valid email address");
+        EMAIL_MSG.html("Email không hợp lệ");
         EMAIL_MSG.show();
         valid = false;
     }
