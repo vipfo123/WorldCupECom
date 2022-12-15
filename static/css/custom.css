@@ -13,7 +13,7 @@
 }
 
 .price:before {
-    content: "\0024";
+    content: "\FE69";
 }
 
 .shirt {
