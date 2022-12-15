@@ -7,14 +7,14 @@
     margin-bottom: 1em;
 }
 
-/* .price {
+ .price {
     color: seagreen;
     font-weight: bold;    
 }
 
 .price::before {
-    visibility: hidden;
-} */
+    content: "\0024";
+} 
 
 .shirt {
     margin-bottom: 10px;
