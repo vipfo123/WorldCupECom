@@ -12,10 +12,6 @@
     font-weight: bold;    
 }
 
-.price::before {
-    content: "GGGG";
-}
-
 .shirt {
     margin-bottom: 10px;
     width: 200px;
