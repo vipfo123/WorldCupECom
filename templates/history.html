@@ -1,23 +1,23 @@
 {% extends "base.html" %}
 
 {% block title %}
-World Cup Store - History
+World Cup Store - Lịch sử
 {% endblock %}
 {% block body %}
 
 <!-- Main Store Body -->
       <div class="row">
         <div class="col-sm">
-          <h2>Your Shopping History</h2>
-          <p>Items you've bought in the past.</p>
+          <h2>Lịch sử mua sắm của bạn</h2>
+          <p>Sản phẩm đã được mua trong quá khứ.</p>
           <table class="table table-sm">
             <thead>
               <tr>
                 <th scope="col">#</th>
-                <th scope="col">Item</th>
-                <th scope="col">Team</th>
-                <th scope="col">Quantity</th>
-                <th scope="col">Date</th>
+                <th scope="col">Sản phẩm</th>
+                <th scope="col">Đội</th>
+                <th scope="col">Số lượng</th>
+                <th scope="col">Ngày mua</th>
                 <th scope="col"></th>
               </tr>
             </thead>
@@ -30,7 +30,7 @@ World Cup Store - History
                 <td>{{ myShirts[i]["team"] }}</td>
                 <td>{{ myShirts[i]["quantity"] }}</td>
                 <td>{{ myShirts[i]["date"] }}</td>
-                <td><a href="/filter/?id={{ myShirts[i]['id'] }}"><button type="button" class="btn btn-warning">Buy Again</button></a></td>
+                <td><a href="/filter/?id={{ myShirts[i]['id'] }}"><button type="button" class="btn btn-warning">Mua lại</button></a></td>
               </tr>
             </tbody>
             {% endfor %}

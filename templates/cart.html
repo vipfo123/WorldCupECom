@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block title %}
-World Cup Store - cart
+World Cup Store - Giỏ hàng
 {% endblock %}
 
 {% block body %}
@@ -10,7 +10,7 @@ World Cup Store - cart
     <div>
       <div>
         <div>
-          <h5 class="modal-title" id="exampleModalLongTitle">Shopping Cart</h5>
+          <h5 class="modal-title" id="exampleModalLongTitle">Giỏ hàng</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           </button>
         </div>
@@ -23,11 +23,11 @@ World Cup Store - cart
                     <thead>
                       <tr>
                         <th scope="col">#</th>
-                        <th scope="col">Item</th>
-                        <th scope="col">Team</th>
-                        <th scope="col">Quantity</th>
-                        <th scope="col">Unit Price</th>
-                        <th scope="col">Sub-Total</th>
+                        <th scope="col">Sản phẩm</th>
+                        <th scope="col">Đội</th>
+                        <th scope="col">Số lượng</th>
+                        <th scope="col">Giá</th>
+                        <th scope="col">Tạm tính</th>
                         <th scope="col"></th>
                       </tr>
                     </thead>
@@ -42,14 +42,14 @@ World Cup Store - cart
                         <td><form action="/update/">
                             <input type="hidden" name="id" value="{{shoppingCart[i]['id']}}" />
                             <input type="number" name="quantity" min="1" max="10" size="5" value="{{ shoppingCart[i]['qty'] }}">
-                            <button type="submit" class="btn btn-warning checkout">Update</button>
+                            <button type="submit" class="btn btn-warning checkout">Cập nhật</button>
                           </form></td>
                         <td>{{ '${:,.2f}'.format(shoppingCart[i]["price"]) }}</td>
                         <td>{{ '${:,.2f}'.format(shoppingCart[i]['subtotal']) }}</td>
                         <td>
                           <form action="/remove/" methods="GET">
                             <input type="hidden" name="id" value="{{ shoppingCart[i]['id'] }}" />
-                            <button type="submit" class="btn btn-secondary btn-sm" id="removeFromCart">Remove</button>
+                            <button type="submit" class="btn btn-secondary btn-sm" id="removeFromCart">Xóa</button>
                           </form>
                         </td>
                       </tr>
@@ -59,22 +59,22 @@ World Cup Store - cart
                       <tr>
                         <td colSpan="7">Total: {{ '${:,.2f}'.format(total) }}<br /><br />
                           <div class="modal-footer">
-                            <a href="/"><button type="button" class="btn btn-primary checkout">Continue Shopping</button></a>
-                            <a href="/checkout/"><button type="button" class="btn btn-success checkout">Proceed to Checkout</button></a>
+                            <a href="/"><button type="button" class="btn btn-primary checkout">Tiếp tục mua sắm</button></a>
+                            <a href="/checkout/"><button type="button" class="btn btn-success checkout">Thanh toán</button></a>
                           </div>
                         </td>
                       </tr>
                     </tfoot>
                     {% else %}
                       <tr>
-                        <td colSpan="7"><h3>Your cart is empty :\</h3></td>
+                        <td colSpan="7"><h3>Giỏ hàng của bạn đang trống :\</h3></td>
                       </tr>
                     </tbody>
                     <tfoot>
                       <tr>
-                        <td colSpan="7">Get some shirts now!<br />
+                        <td colSpan="7">Get some shirts Chọn ngay vài chiếc áo đi!<br />
                           <div>
-                            <a href="/"><button type="button" class="btn btn-secondary" data-dismiss="modal">Continue Shopping</button></a>
+                            <a href="/"><button type="button" class="btn btn-secondary" data-dismiss="modal">Tiếp tục mua sắm</button></a>
                           </div>
                         </td>
                       </tr>
