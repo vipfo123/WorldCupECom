@@ -12,7 +12,7 @@
     font-weight: bold;    
 }
 
-.price:before {
+.price::before {
     content: "\FE69";
 }
 
