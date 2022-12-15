@@ -12,6 +12,10 @@
     font-weight: bold;    
 }
 
+.price::before {
+    visibility: hidden;
+}
+
 .shirt {
     margin-bottom: 10px;
     width: 200px;
