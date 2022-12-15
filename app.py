@@ -214,7 +214,7 @@ def logged():
     if 'user' in session:
         return redirect ( "/" )
     # If username is not in the database return the log in page
-    return render_template ( "login.html", msg="Wrong username or password." )
+    return render_template ( "login.html", msg="Sai tài khoản hoặc mật khẩu." )
 
 
 @app.route("/history/")
@@ -250,12 +250,12 @@ def registration():
     lname = request.form["lname"]
     email = request.form["email"]
     if password != confirm:
-        return render_template("new.html", msg="Passwords did not match !!")
+        return render_template("new.html", msg="Nhập lại mật khẩu không đúng !!")
     # See if username already in the database
     rows = db.execute( "SELECT * FROM users WHERE username = :username ", username = username )
     # If username already exists, alert user
     if len( rows ) > 0:
-        return render_template ( "new.html", msg="Username already exists!" )
+        return render_template ( "new.html", msg="Tài khoản đã tồn tại!" )
     # If new user, upload his/her info into the users database
     new = db.execute ( "INSERT INTO users (username, password, fname, lname, email) VALUES (:username, :password, :fname, :lname, :email)",
                     username=username, password=password, fname=fname, lname=lname, email=email )
